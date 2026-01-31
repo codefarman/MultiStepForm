@@ -101,7 +101,7 @@ export default function PersonalDetailsStep({ data, setData }) {
       // 3️⃣ Send (Using valid fetch, no await if preferred, but await is safer)
       // User wanted no await, but we really should use it to prevent race conditions.
       // However, since we show a success screen immediately, it doesn't unmount.
-      await fetch(GOOGLE_SHEET_URL, {
+      fetch(GOOGLE_SHEET_URL, {
         method: "POST",
         body,
         mode: "no-cors",
