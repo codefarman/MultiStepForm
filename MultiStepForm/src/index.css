@@ -1,0 +1,88 @@
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&display=swap');
+
+
+/* In your navbar CSS */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0); 
+  will-change: transform;
+}
+
+.MuiAutocomplete-popper {
+  width: 100% !important;
+  max-width: 100% !important;
+  z-index: 1500;
+}
+
+
+/* GLOBAL FIX FOR CHROME FONT RENDERING */
+html, body {
+  font-family: "Outfit", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  margin: 0; 
+  /* padding-top: 80px;      */
+  padding: 0;   
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  
+
+  /* Chrome fix → prevents wider text */
+  font-feature-settings: "liga" 1, "kern" 1 !important;
+  font-variation-settings: "wght" 500 !important;
+
+  /* Prevent Chrome auto-font adjust */
+  font-synthesis: none !important;
+
+  /* Force line-height same across browsers */
+  line-height: 1.2 !important;
+}
+
+/* Ensures headings stay identical in Chrome/Edge */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important; /* Chrome spacing fix */
+}
+
+/* Gradient text fix for Chrome */
+.gradient-text {
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  paint-order: stroke fill !important;
+}
+
+/* Disable Chrome fontsize inflation */
+html {
+  text-size-adjust: 100% !important;
+  -webkit-text-size-adjust: 100% !important;
+}
+
+/* PREVENT TAILWIND FROM OVERRIDING SMOOTHING */
+* {
+  -webkit-font-smoothing: inherit !important;
+}
+
+
+/* Infinite scroll animation (keep if used on homepage) */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll-slow {
+  display: flex;
+  width: max-content;
+}
+
+.animate-infinite-scroll-slow:hover {
+  animation-play-state: paused !important;
+}
