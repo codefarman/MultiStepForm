@@ -51,10 +51,10 @@ export default function MultiStepForm() {
         {/* HEADER AREA: Title + Progress Bar */}
         <Box
           sx={{
-            width: "100%",
+            width: "98%",
             maxWidth: 900,
             mx: "auto",
-            px: { xs: 1.5, sm: 2.5 },
+            px: { xs: 0.5, sm: 2.5 },
             py: { xs: 0.8, sm: 1.2 },
             textAlign: "center",
             display: "flex",
@@ -109,7 +109,7 @@ export default function MultiStepForm() {
           </Typography>
 
           {/* PROGRESS BAR - MOVED BELOW TITLE */}
-          <Box sx={{ width: "100%", maxWidth: 600 }}>
+          <Box sx={{ width: "96%", maxWidth: 600 }}>
             <ProgressBar step={stepIndex + 1} total={totalSteps} />
           </Box>
 
@@ -118,10 +118,10 @@ export default function MultiStepForm() {
         {/* MAIN CONTENT */}
         <Box
           sx={{
-            width: "100%",
+            width: "96%",
             maxWidth: 1100,
             mx: "auto",
-            px: { xs: 1.5, sm: 2.5 },
+            px: { xs: 0.5, sm: 1.5 },
             pt: 0.5,
           }}
         >

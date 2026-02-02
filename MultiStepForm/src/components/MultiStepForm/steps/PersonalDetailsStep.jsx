@@ -134,7 +134,7 @@ export default function PersonalDetailsStep({ data, setData }) {
           animation: "fadeIn 0.5s ease-in"
         }}
       >
-        <Box sx={{ position: "relative", mb: 4 }}>
+        <Box sx={{ position: "relative", mb: 4  }}>
           {/* Glowing Background Effect */}
           <Box
             sx={{
@@ -194,145 +194,17 @@ export default function PersonalDetailsStep({ data, setData }) {
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         gap: { xs: 2, md: 3 }, // Gap stays moderate
-        alignItems: "stretch",
-        mt: -1,
+        alignItems: "center",
+        mt: 1,
       }}
     >
-      {/* LEFT SIDE: Universities + Benefits */}
-      <Box sx={{ flex: 1, display: "flex", flexDirection: "column", gap: 3, minWidth: 0 }}>
-
-        {/* Top Matches Section */}
-        <Box>
-          <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1, color: "#1e293b", fontSize: "1rem" }}>
-            {data.program === "STUDY_ABROAD" ? "Your Global Future Awaits" : "Top University Matches"}
-          </Typography>
-
-          {data.program === "STUDY_ABROAD" ? (
-            // 🌍 Study Abroad Creative Text
-            <Box
-              sx={{
-                p: 3,
-                borderRadius: 3,
-
-                // 🖌️ New Premium Background Image
-                backgroundImage: "url('/study_abroad_bg.png')", // Assume I will move it to public or import it
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-
-                display: "flex",
-                flexDirection: "column",
-                gap: 1.5,
-                textAlign: "center",
-                justifyContent: "center",
-                alignItems: "center",
-                minHeight: 220,
-
-                // Glassmorphism Overlay Effect
-                position: "relative",
-                overflow: "hidden",
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  inset: 0,
-                  bgcolor: "rgba(255, 255, 255, 0.65)", // Light overlay for readability
-                  backdropFilter: "blur(4px)",
-                  zIndex: 0
-                }
-              }}
-            >
-              <Box sx={{ position: "relative", zIndex: 1 }}>
-                <Typography variant="h5" fontWeight={800} sx={{ color: "#0f172a", mb: 0.5 }}>
-                  Dream Big, Fly High! ✈️
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#334155", fontWeight: 600, fontStyle: "italic", mb: 2 }}>
-                  "The world is a book and those who do not travel read only one page."
-                </Typography>
-                <Typography variant="caption" sx={{ color: "#1e293b", fontWeight: 700, display: "block", bgcolor: "rgba(255,255,255,0.5)", py: 0.5, px: 2, borderRadius: 50 }}>
-                  Start your global journey today 🌏
-                </Typography>
-              </Box>
-            </Box>
-          ) : (
-            // 🎓 Standard University Grid
-            <Box
-              sx={{
-                display: "grid",
-                // Fixed 4 columns on large screens to prevent stretching/squeezing
-                gridTemplateColumns: { xs: "repeat(2, 1fr)", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)" },
-                gap: 1.5,
-                justifyContent: "start" // Align to start
-              }}
-            >
-              {recommended.slice(0, 4).map((uni, i) => ( // Show only 4 cards strictly
-                <UniversityCard key={i} university={uni} />
-              ))}
-            </Box>
-          )}
-        </Box>
-
-        {/* Dynamic Benefits Section (What We Ensure) */}
-        <Box
-          sx={{
-            p: 2,
-            bgcolor: "#fff",
-            borderRadius: 3,
-            border: "1px solid #e2e8f0",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.03)"
-          }}
-        >
-          <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5, color: "#7C3AED", fontSize: "1rem" }}>
-            What We Ensure
-          </Typography>
-
-          <Box sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, // 2 Columns
-            columnGap: 2,
-            rowGap: 1.5
-          }}>
-            {BENEFITS.map((b, i) => {
-              const Icons = [School, VerifiedUser, CheckCircle, LocationOn, VerifiedUser];
-              const IconComp = Icons[i % Icons.length];
-
-              return (
-                <Box key={i} sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}>
-                  <Box
-                    sx={{
-                      minWidth: 32,
-                      height: 32,
-                      borderRadius: "50%",
-                      bgcolor: "#f3e8ff",
-                      color: "#7C3AED",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mt: 0.2
-                    }}
-                  >
-                    <IconComp sx={{ fontSize: 18 }} />
-                  </Box>
-                  <Box>
-                    <Typography variant="body2" fontWeight={700} sx={{ lineHeight: 1.2, color: "#1e293b", fontSize: "0.85rem" }}>
-                      {b.title}
-                    </Typography>
-                    <Typography variant="caption" sx={{ color: "#64748b", lineHeight: 1.1, fontSize: "0.7rem", display: "block", mt: 0.2 }}>
-                      {b.desc}
-                    </Typography>
-                  </Box>
-                </Box>
-              );
-            })}
-          </Box>
-        </Box>
-
-      </Box>
-
-      {/* RIGHT SIDE: Form */}
+     {/* Left SIDE: Form */}
       <Box
         sx={{
           maxWidth: 320, // Reduced further from 340 to 320
           width: "100%",
           p: 2.5,
+          // pr: {xs: 3, md: 0},
           borderRadius: 3,
           bgcolor: "white",
           border: "1px solid #e2e8f0",
@@ -469,6 +341,137 @@ export default function PersonalDetailsStep({ data, setData }) {
 
         </Box>
       </Box>
+
+      {/* right SIDE: Universities + Benefits */}
+      <Box sx={{ flex: 1, display: "flex", flexDirection: "column", gap: 1, minWidth: 0 }}>
+
+        {/* Top Matches Section */}
+        <Box>
+          <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1, color: "#1e293b", fontSize: "1rem" }}>
+            {data.program === "STUDY_ABROAD" ? "Your Global Future Awaits" : "Top University Matches"}
+          </Typography>
+
+          {data.program === "STUDY_ABROAD" ? (
+            // 🌍 Study Abroad Creative Text
+            <Box
+              sx={{
+                p: 3,
+                borderRadius: 3,
+
+                // 🖌️ New Premium Background Image
+                backgroundImage: "url('/study_abroad_bg.png')", 
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.5,
+                textAlign: "center",
+                justifyContent: "center",
+                alignItems: "center",
+                minHeight: 220,
+
+                // Glassmorphism Overlay Effect
+                position: "relative",
+                overflow: "hidden",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: 0,
+                  bgcolor: "rgba(255, 255, 255, 0.65)", // Light overlay for readability
+                  backdropFilter: "blur(1px)",
+                  zIndex: 0
+                }
+              }}
+            >
+              <Box sx={{ position: "relative", zIndex: 1 }}>
+                <Typography variant="h5" fontWeight={800} sx={{ color: "#0f172a", mb: 0.5 }}>
+                  Dream Big, Fly High! ✈️
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#334155", fontWeight: 600, fontStyle: "italic", mb: 2 }}>
+                  "The world is a book and those who do not travel read only one page."
+                </Typography>
+                <Typography variant="caption" sx={{ color: "#1e293b", fontWeight: 700, display: "block", bgcolor: "rgba(255,255,255,0.5)", py: 0.5, px: 2, borderRadius: 50 }}>
+                  Start your global journey today 🌏
+                </Typography>
+              </Box>
+            </Box>
+          ) : (
+            // 🎓 Standard University Grid
+            <Box
+              sx={{
+                display: "grid",
+                // Fixed 4 columns on large screens to prevent stretching/squeezing
+                gridTemplateColumns: { xs: "repeat(2, 1fr)", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)" },
+                gap: 1.5,
+                justifyContent: "start" // Align to start
+              }}
+            >
+              {recommended.slice(0, 4).map((uni, i) => ( // Show only 4 cards strictly
+                <UniversityCard key={i} university={uni} />
+              ))}
+            </Box>
+          )}
+        </Box>
+
+        {/* Dynamic Benefits Section (What We Ensure) */}
+        <Box
+          sx={{
+            p: 2,
+            bgcolor: "#fff",
+            borderRadius: 3,
+            border: "1px solid #e2e8f0",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.03)"
+          }}
+        >
+          <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5, color: "#7C3AED", fontSize: "1rem" }}>
+            What We Ensure
+          </Typography>
+
+          <Box sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, // 2 Columns
+            columnGap: 2,
+            rowGap: 1.5
+          }}>
+            {BENEFITS.map((b, i) => {
+              const Icons = [School, VerifiedUser, CheckCircle, LocationOn, VerifiedUser];
+              const IconComp = Icons[i % Icons.length];
+
+              return (
+                <Box key={i} sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}>
+                  <Box
+                    sx={{
+                      minWidth: 32,
+                      height: 32,
+                      borderRadius: "50%",
+                      bgcolor: "#f3e8ff",
+                      color: "#7C3AED",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mt: 0.2
+                    }}
+                  >
+                    <IconComp sx={{ fontSize: 18 }} />
+                  </Box>
+                  <Box>
+                    <Typography variant="body2" fontWeight={700} sx={{ lineHeight: 1.2, color: "#1e293b", fontSize: "0.85rem" }}>
+                      {b.title}
+                    </Typography>
+                    <Typography variant="caption" sx={{ color: "#64748b", lineHeight: 1.1, fontSize: "0.7rem", display: "block", mt: 0.2 }}>
+                      {b.desc}
+                    </Typography>
+                  </Box>
+                </Box>
+              );
+            })}
+          </Box>
+        </Box>
+
+      </Box>
+
+      
     </Box>
   );
 }
