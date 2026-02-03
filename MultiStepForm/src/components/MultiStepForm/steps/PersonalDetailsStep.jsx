@@ -23,6 +23,9 @@ import {
   LocationOn,
   VerifiedUser,
   School,
+  AccountBalance,
+  TrendingUp,
+  AutoGraph
 } from "@mui/icons-material";
 
 const GOOGLE_SHEET_URL =
@@ -134,7 +137,7 @@ export default function PersonalDetailsStep({ data, setData }) {
           animation: "fadeIn 0.5s ease-in"
         }}
       >
-        <Box sx={{ position: "relative", mb: 4  }}>
+        <Box sx={{ position: "relative", mb: 4 }}>
           {/* Glowing Background Effect */}
           <Box
             sx={{
@@ -198,7 +201,7 @@ export default function PersonalDetailsStep({ data, setData }) {
         mt: 1,
       }}
     >
-     {/* Left SIDE: Form */}
+      {/* Left SIDE: Form */}
       <Box
         sx={{
           maxWidth: 320, // Reduced further from 340 to 320
@@ -359,7 +362,7 @@ export default function PersonalDetailsStep({ data, setData }) {
                 borderRadius: 3,
 
                 // 🖌️ New Premium Background Image
-                backgroundImage: "url('/study_abroad_bg.png')", 
+                backgroundImage: "url('/study_abroad_bg.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
 
@@ -435,8 +438,17 @@ export default function PersonalDetailsStep({ data, setData }) {
             rowGap: 1.5
           }}>
             {BENEFITS.map((b, i) => {
-              const Icons = [School, VerifiedUser, CheckCircle, LocationOn, VerifiedUser];
-              const IconComp = Icons[i % Icons.length];
+              // Custom Icons & Colors for each benefit
+              const benefitConfig = [
+                { icon: VerifiedUser, color: "#10B981", bg: "#d1fae5" }, // Free Counseling (Green)
+                { icon: AccountBalance, color: "#F59E0B", bg: "#fef3c7" }, // EMI (Amber)
+                { icon: TrendingUp, color: "#3B82F6", bg: "#dbeafe" }, // Career Ready (Blue)
+                { icon: School, color: "#8B5CF6", bg: "#f3e8ff" }, // UGC (Violet)
+                { icon: AutoGraph, color: "#EC4899", bg: "#fce7f3" }, // Next-Gen (Pink)
+              ];
+
+              const conf = benefitConfig[i % benefitConfig.length];
+              const IconComp = conf.icon;
 
               return (
                 <Box key={i} sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}>
@@ -445,8 +457,8 @@ export default function PersonalDetailsStep({ data, setData }) {
                       minWidth: 32,
                       height: 32,
                       borderRadius: "50%",
-                      bgcolor: "#f3e8ff",
-                      color: "#7C3AED",
+                      bgcolor: conf.bg,
+                      color: conf.color,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -471,7 +483,7 @@ export default function PersonalDetailsStep({ data, setData }) {
 
       </Box>
 
-      
+
     </Box>
   );
 }

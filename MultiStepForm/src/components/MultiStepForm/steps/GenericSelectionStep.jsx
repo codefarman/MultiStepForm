@@ -50,6 +50,7 @@ export default function GenericSelectionStep({
             <OptionCard
               label={opt.label}
               subLabel={opt.subLabel}
+              color={opt.color} // Pass the color!
               icon={
                 opt.flag ? (
                   <img
