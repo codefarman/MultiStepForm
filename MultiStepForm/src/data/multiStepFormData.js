@@ -205,7 +205,7 @@ export const INTERESTS = [
 ];
 
 export const BUDGETS = [
-  { label: "Under ₹1 Lakh", value: "Under ₹1 Lakh", icon: Payments, color: "#94A3B8" },       // Slate
+  { label: "Under ₹1 Lakh", value: "Under ₹1 Lakh", icon: Payments, color: "#8B5CF6" },       // Violet
   { label: "₹1 – 1.5 Lakh", value: "₹1 – 1.5 Lakh", icon: Payments, color: "#2DD4BF" },       // Teal
   { label: "₹1.5 – 2 Lakh", value: "₹1.5 – 2 Lakh", icon: Payments, color: "#3B82F6" },       // Blue
   { label: "Above ₹2 Lakh", value: "Above ₹2 Lakh", icon: Savings, color: "#F59E0B" },        // Amber

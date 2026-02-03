@@ -350,7 +350,7 @@ export default function PersonalDetailsStep({ data, setData }) {
 
         {/* Top Matches Section */}
         <Box>
-          <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1, color: "#1e293b", fontSize: "1rem" }}>
+          <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1, color: "#1e293b", fontSize: "1rem", textAlign: { xs: "center", md: "left" } }}>
             {data.program === "STUDY_ABROAD" ? "Your Global Future Awaits" : "Top University Matches"}
           </Typography>
 
@@ -407,7 +407,8 @@ export default function PersonalDetailsStep({ data, setData }) {
                 // Fixed 4 columns on large screens to prevent stretching/squeezing
                 gridTemplateColumns: { xs: "repeat(2, 1fr)", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)" },
                 gap: 1.5,
-                justifyContent: "start" // Align to start
+                justifyContent: { xs: "center", md: "start" }, // Align to start
+                justifyItems: "center"
               }}
             >
               {recommended.slice(0, 4).map((uni, i) => ( // Show only 4 cards strictly
