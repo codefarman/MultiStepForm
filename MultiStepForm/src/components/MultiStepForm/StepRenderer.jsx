@@ -42,7 +42,14 @@ export default function StepRenderer({ stepKey, data, setData, goNext }) {
       return renderGeneric(PG_TYPES, "pgType");
 
     case "qualification":
-      return renderGeneric(QUALIFICATIONS, "qualification");
+      // Filter logic: if Program is "PG", hide "12th"
+      // "12th" has value="12th" in QUALIFICATIONS
+      const filteredQualifications =
+        data.program === "PG"
+          ? QUALIFICATIONS.filter((q) => q.value !== "12th")
+          : QUALIFICATIONS;
+
+      return renderGeneric(filteredQualifications, "qualification");
 
     case "academic":
       return renderGeneric(ACADEMIC_PERFORMANCE, "academic");
@@ -73,15 +80,15 @@ export default function StepRenderer({ stepKey, data, setData, goNext }) {
       return renderGeneric(COURSE_LEVELS, "courseLevel");
 
     case "country":
-  return renderGeneric(
-    STUDY_ABROAD_COUNTRIES.map((c) => ({
-      label: c.name,
-      value: c.name,
-      subLabel: c.code.toUpperCase(),
-      flag: `https://flagcdn.com/w80/${c.code}.png`,
-    })),
-    "country"
-  );
+      return renderGeneric(
+        STUDY_ABROAD_COUNTRIES.map((c) => ({
+          label: c.name,
+          value: c.name,
+          subLabel: c.code.toUpperCase(),
+          flag: `https://flagcdn.com/w80/${c.code}.png`,
+        })),
+        "country"
+      );
 
 
     case "annualBudget":
