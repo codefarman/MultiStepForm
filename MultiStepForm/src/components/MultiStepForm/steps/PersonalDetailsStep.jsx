@@ -166,7 +166,7 @@ export default function PersonalDetailsStep({ data, setData }) {
 
         <Button
           variant="contained"
-          onClick={() => window.location.reload()} // Allow them to reset if they want
+          onClick={() => window.location.href = "https://www.edhike.in/"} // Allow them to reset if they want
           sx={{
             background: "linear-gradient(90deg, #7C3AED, #3B82F6)",
             color: "white",
