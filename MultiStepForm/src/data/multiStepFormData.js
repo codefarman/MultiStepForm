@@ -118,11 +118,11 @@ export const WORKING_FIELDS = [
   { label: "Healthcare", value: "Healthcare", icon: LocalHospital, color: "#EF4444" },        // Red
   { label: "Engineering", value: "Engineering", icon: Engineering, color: "#F97316" },        // Orange
   { label: "Education", value: "Education", icon: School, color: "#EAB308" },                 // Yellow
-  { label: "Other", value: "Other", icon: Lightbulb, color: "#64748B" },                      // Slate
+  { label: "Other", value: "Other", icon: Lightbulb, color: "#A855F7" },                      // Purple
 ];
 
 export const SALARY_RANGES = [
-  { label: "Below ₹25,000", value: "Below ₹25,000", icon: Payments, color: "#94A3B8" },       // Slate 400
+  { label: "Below ₹25,000", value: "Below ₹25,000", icon: Payments, color: "#8B5CF6" },       // Violet
   { label: "₹25,000 – ₹50,000", value: "₹25,000 – ₹50,000", icon: Payments, color: "#2DD4BF" }, // Teal
   { label: "₹50,000 – ₹1 Lakh", value: "₹50,000 – ₹1 Lakh", icon: Payments, color: "#3B82F6" }, // Blue
   { label: "Above ₹1 Lakh", value: "Above ₹1 Lakh", icon: Savings, color: "#F59E0B" },          // Amber
@@ -153,7 +153,7 @@ export const STUDY_ABROAD_COUNTRIES = [
   { name: "United States", code: "us", icon: Place, color: "#3B82F6" },    // Blue
   { name: "Canada", code: "ca", icon: Place, color: "#EF4444" },           // Red
   { name: "Australia", code: "au", icon: Place, color: "#EAB308" },       // Gold/Yellow
-  { name: "New Zealand", code: "nz", icon: Place, color: "#1E293B" },      // Dark (All Blacks)
+  { name: "New Zealand", code: "nz", icon: Place, color: "#3B82F6" },      // Blue
   { name: "Germany", code: "de", icon: Place, color: "#F59E0B" },         // Gold
   { name: "France", code: "fr", icon: Place, color: "#3B82F6" },         // Blue
   { name: "Switzerland", code: "ch", icon: Place, color: "#EF4444" },      // Red
@@ -192,7 +192,7 @@ export const INTERESTS = [
   { label: "Sales", value: "Sales", icon: Handshake, color: "#F59E0B" },                        // Amber
   { label: "Finance", value: "Finance", icon: AccountBalance, color: "#10B981" },               // Emerald
   { label: "HR", value: "HR", icon: Diversity3, color: "#8B5CF6" },                             // Violet
-  { label: "Operations", value: "Operations", icon: SupportAgent, color: "#64748B" },           // Slate
+  { label: "Operations", value: "Operations", icon: SupportAgent, color: "#F43F5E" },           // Rose
   { label: "Supply Chain", value: "Supply Chain", icon: Factory, color: "#F97316" },            // Orange
   { label: "Business Analytics", value: "Business Analytics", icon: Analytics, color: "#3B82F6" }, // Blue
   { label: "Data Science", value: "Data Science", icon: Biotech, color: "#06B6D4" },            // Cyan
@@ -201,7 +201,7 @@ export const INTERESTS = [
   { label: "Healthcare", value: "Healthcare", icon: LocalHospital, color: "#EF4444" },          // Red
   { label: "Travel & Tourism", value: "Travel & Tourism", icon: TravelExplore, color: "#14B8A6" }, // Teal
   { label: "International Business", value: "International Business", icon: Public, color: "#0EA5E9" }, // Sky
-  { label: "Others / Not Sure", value: "Others / Not Sure", icon: Lightbulb, color: "#94A3B8" }, // Slate
+  { label: "Others / Not Sure", value: "Others / Not Sure", icon: Lightbulb, color: "#D946EF" }, // Fuchsia
 ];
 
 export const BUDGETS = [
